@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-
+import { Consumer } from '../../context';
 // Search, Lyrics, Tracks, API
 // class base component
 class Tracks extends Component {
 	render() {
 		return (
-			<div>
-				<h1>Tracks</h1>
-			</div>
+			//logs on console
+			<Consumer>
+				{(value) => {
+					console.log(value);
+					return <h1> Tracks</h1>;
+				}}
+			</Consumer>
 		);
 	}
 }
