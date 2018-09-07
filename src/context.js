@@ -27,7 +27,7 @@ export class Provider extends Component {
 				${process.env.REACT_APP_MXM_KEY}`
 			)
 			.then((res) => {
-				console.log(res.data);
+				//console.log(res.data);
 				this.setState({ track_list: res.data.message.body.track_list });
 			})
 			.catch((err) => console.log(err));
