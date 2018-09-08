@@ -21,7 +21,7 @@ const Track = (props) => {
 						: {track.album_name}{' '}
 					</p>
 					<Link to={`lyrics/track/${track.track_id}`} className="btn btn-primary btn-block">
-						<i class="fas fa-angle-right" /> View Lyrics
+						<i className="fas fa-angle-right" /> View Lyrics
 					</Link>
 				</div>
 			</div>
