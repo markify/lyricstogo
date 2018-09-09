@@ -5,6 +5,7 @@ const Context = React.createContext();
 
 // export a consumer aswell
 // context provider
+// reducers can be called middleman
 const reducer = (state, action) => {
 	switch (action.type) {
 		case 'SEARCH_TRACKS':
@@ -24,7 +25,7 @@ export class Provider extends Component {
 	state = {
 		dispatch: (action) => this.setState((state) => reducer(state, action)),
 		track_list: [],
-		heading: 'Top 10 Tracks'
+		heading: 'Top 10 Tracks in US'
 	};
 	// class component
 	// CORS invalid error when fetching api

@@ -46,7 +46,11 @@ class Lyrics extends Component {
 		} else {
 			return (
 				<React.Fragment>
-					<Link to="/" className="btn btn-dark btn-sm mb-4">
+					<Link
+						to="/"
+						className="btn btn-sm mb-4"
+						style={{ backgroundColor: '#3B5998', color: 'whitesmoke' }}
+					>
 						{' '}
 						Go Back
 					</Link>

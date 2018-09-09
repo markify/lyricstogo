@@ -5,8 +5,9 @@ class Search extends Component {
 	state = {
 		trackTitle: ''
 	};
-
-	findTrack = (e) => {
+	// Consume => Destructuring => binding => function call dispatch
+	// now we have acess to dispatch function
+	findTrack = (dispatch, e) => {
 		e.preventDefault();
 		axios
 			.get(
@@ -15,7 +16,16 @@ class Search extends Component {
 				${process.env.REACT_APP_MXM_KEY}`
 			)
 			.then((res) => {
-				console.log(res.data);
+				//once we get the results
+				dispatch({
+					//action type for reducer on context.js
+					type: 'SEARCH_TRACKS',
+					payload: res.data.message.body.track_list
+				});
+				// resets search input
+				this.setState({ trackTitle: '' });
+
+				//console.log(res.data);
 				//this.setState({ track_list: res.data.message.body.track_list });
 			})
 			.catch((err) => console.log(err));
@@ -30,13 +40,17 @@ class Search extends Component {
 		return (
 			<Consumer>
 				{(value) => {
+					//destructuring , global state => pull dispatch from value then pass to form findTrack on submit
+					const { dispatch } = value;
+
 					return (
 						<div className="card card-body mb-4 p-4">
 							<h1 className="display-4 text-center">
-								<i className="fas fa-music" /> Search for a Song
+								<i className="fas fa-music" style={{ color: '#3B5998' }} />
+								<span style={{ color: '#3B5998' }}> Search for a Song </span>
 							</h1>
 							<p className="lead text-center">Get lyrics for any song</p>
-							<form onSubmit={this.findTrack}>
+							<form onSubmit={this.findTrack.bind(this, dispatch)}>
 								<div className="form-group">
 									<input
 										type="text"
@@ -47,7 +61,11 @@ class Search extends Component {
 										onChange={this.onChange}
 									/>
 								</div>
-								<button className="btn btn-primary btn-lg btn-block" type="submit">
+								<button
+									className="btn btn-primary btn-lg btn-block"
+									style={{ backgroundColor: '#3B5998' }}
+									type="submit"
+								>
 									{' '}
 									Get Track Lyrics{' '}
 								</button>

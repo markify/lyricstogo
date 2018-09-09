@@ -20,8 +20,14 @@ const Track = (props) => {
 						</strong>{' '}
 						: {track.album_name}{' '}
 					</p>
-					<Link to={`lyrics/track/${track.track_id}`} className="btn btn-primary btn-block">
-						<i className="fas fa-angle-right" /> View Lyrics
+					<Link
+						to={`lyrics/track/${track.track_id}`}
+						className="btn btn-block"
+						style={{ backgroundColor: '#3B5998' }}
+					>
+						<span style={{ color: 'whitesmoke' }}>
+							<i className="fas fa-angle-right" /> View Lyrics
+						</span>
 					</Link>
 				</div>
 			</div>

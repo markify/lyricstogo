@@ -1,7 +1,7 @@
 import React from 'react';
 import Tracks from '../tracks/Tracks';
 import Search from '../tracks/Search';
-
+import Footer from './Footer';
 // Hold search component and track component
 
 const Index = () => {
@@ -9,6 +9,7 @@ const Index = () => {
 		<React.Fragment>
 			<Search />
 			<Tracks />
+			<Footer />
 		</React.Fragment>
 	);
 };
