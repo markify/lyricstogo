@@ -17,7 +17,7 @@ class Lyrics extends Component {
 			)
 			// ${track.track_id}
 			.then((res) => {
-				console.log(res.data);
+				//console.log(res.data);
 
 				// we want to set the data to the object state lyrics
 				// cors proxy : https://cors-anywhere.herokuapp.com/
@@ -32,7 +32,7 @@ class Lyrics extends Component {
 				this.setState({ track: res.data.message.body.track });
 
 				//log track id
-				console.log(res.data);
+				//console.log(res.data);
 			})
 			.catch((err) => console.log(err));
 	}
