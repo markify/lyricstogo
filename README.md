@@ -1,5 +1,5 @@
 
-## Find lyrics
+## Find lyrics with Lyricstogo
 
 This project leveraged my knowledge on react further.
 
